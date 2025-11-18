@@ -11,7 +11,7 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=3000
-      - MONGO_URI=mongodb+srv://coffe_db_user:XNg2b6irdztHuWgL@cluster0.z0ptntg.mongodb.net/coffeeshop?retryWrites=true&w=majority&appName=Cluster0
+      - MONGO_URI=${MONGO_URI}
       - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-http://localhost:3000}
       - JWT_SECRET=${JWT_SECRET}
       - CLOUDINARY_CLOUD_NAME=${CLOUDINARY_CLOUD_NAME}
