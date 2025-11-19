@@ -5,13 +5,13 @@ import logger from "./utils/logger";
 
 dotenv.config();
 
-const PORT = process.env.PORT || 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
 const startServer = async (): Promise<void> => {
   try {
     await connectDatabase();
 
-    app.listen(PORT, () => {
+    app.listen(PORT, "0.0.0.0", () => {
       logger.info(`🚀 Server running on port ${PORT}`);
       logger.info(`📚 API Documentation: http://localhost:${PORT}/api/v1/docs`);
       logger.info(`🏥 Health Check: http://localhost:${PORT}/health`);
